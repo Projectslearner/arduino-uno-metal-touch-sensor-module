@@ -1,73 +1,59 @@
-# KY-036 Metal Touch Sensor with LED Indicator
+# Arduino Uno Metal Touch Sensor Module
 
 #### Project Overview
 
-This project uses the KY-036 metal touch sensor to detect touch inputs and provide corresponding digital and analog readings. An LED connected to the Arduino indicates the presence of a touch based on the sensor's digital output.
+This project demonstrates how to use an Arduino Uno to interface with a metal touch sensor module. The sensor detects the presence of a touch on a metal surface and outputs a signal that the Arduino reads and displays on the Serial Monitor.
 
 #### Components Needed
 
-1. **Arduino Board**
-2. **KY-036 Metal Touch Sensor**
-3. **LED**
-4. **Resistor (for the LED)**
-5. **Jumper Wires**
-6. **Breadboard**
+- **Arduino Uno**
+- **Metal Touch Sensor Module**
+- **Jumper Wires**
+- **Breadboard**
+
+#### Block diagram
 
 
-### Block diagram
+#### Circuit Setup
 
-
-#### Pin Connections
-
-1. **KY-036 Sensor:**
-   - **VCC**: Connect to Arduino 5V
-   - **GND**: Connect to Arduino GND
-   - **Digital Output**: Connect to Arduino digital pin 6
-   - **Analog Output**: Connect to Arduino analog pin A1
-
-2. **LED:**
-   - **Anode (+)**: Connect to Arduino digital pin 12 through a current-limiting resistor (e.g., 220Ω)
-   - **Cathode (-)**: Connect to Arduino GND
+1. **Connect Metal Touch Sensor Module to Arduino Uno:**
+   - Connect the signal output pin of the sensor module to digital pin 2 on the Arduino Uno.
+   - Ensure the VCC pin of the module is connected to 5V on the Arduino Uno.
+   - Connect the GND pin of the module to GND on the Arduino Uno.
 
 #### Instructions
 
-1. **Set Up the Circuit:**
-   - Connect the KY-036 sensor's digital pin to digital pin 6 on the Arduino.
-   - Connect the sensor's analog pin to analog pin A1 on the Arduino.
-   - Connect an LED to digital pin 12 on the Arduino, with a resistor in series to limit current.
-   - Ensure all components are properly grounded and connected to the 5V power supply.
+1. **Circuit Setup:**
+   - Wire up the metal touch sensor module to the Arduino Uno according to the circuit setup section.
 
-2. **Initialize the System:**
-   - Configure the sensor's digital and analog pins as inputs.
-   - Configure the LED pin as an output.
-   - Start serial communication at a baud rate of 9600 to monitor sensor readings.
+2. **Code Upload:**
+   - Open the Arduino IDE and create a new sketch.
+   - Copy and paste the provided Arduino code into the sketch.
 
-3. **Read Sensor Values:**
-   - In the loop function, read the digital value from the sensor.
-   - Turn on the LED if the digital value is HIGH, indicating a touch is detected.
-   - Print the digital value to the Serial Monitor for real-time feedback.
-
-4. **Monitor Analog Values:**
-   - Read the analog value from the sensor to get a more granular measure of touch intensity.
-   - Print the analog value to the Serial Monitor.
-
-5. **Output Results:**
-   - Continuously update the Serial Monitor with the digital and analog readings.
-   - Adjust the delay in the loop function to control the frequency of updates.
+3. **Testing:**
+   - Upload the code to the Arduino Uno.
+   - Open the serial monitor with a baud rate of 9600.
+   - Touch the metal surface detected by the sensor and observe the messages on the Serial Monitor indicating whether metal touch is detected or not.
 
 #### Applications
 
-- **Touch Detection:** Use the setup to detect touch inputs for various interactive projects.
-- **Security Systems:** Integrate the touch sensor in security systems to trigger alerts upon touch.
-- **Educational Projects:** Demonstrate the use of digital and analog sensors in a simple, hands-on project.
+- **Security Systems:** Use for detecting unauthorized access by touch on metal surfaces.
+- **Automation:** Integrate with systems requiring touch-sensitive input for activation or control.
+- **Interactive Displays:** Incorporate into interactive exhibits or displays for user interaction.
+
+#### Notes
+
+- Ensure the metal touch sensor module is positioned correctly and the sensitivity is adjusted as per requirements.
+- Adjust the code logic or use additional components based on specific project needs, such as debounce circuitry for noisy environments.
+- Test the module in the intended application environment to verify functionality and reliability.
 
 ---
 
-🌐 [projectslearner.com](https://www.projectslearner.com)  
+🌐 [ProjectsLearner](https://projectslearner.com/learn/arduino-uno-metal-touch-sensor-module)  
 📧 [projectslearner@gmail.com](mailto:projectslearner@gmail.com)  
 📸 [Instagram](https://www.instagram.com/projectslearner/)  
 📘 [Facebook](https://www.facebook.com/projectslearner)  
 ▶️ [YouTube](https://www.youtube.com/@ProjectsLearner)  
-📘 [LinkedIn](https://www.linkedin.com/in/projectslearner)  
+📘 [LinkedIn](https://www.linkedin.com/in/projectslearner)
 
-## Made for you with ❣️ from ProjectsLearner
+Crafted with ❤️ by ProjectsLearner

@@ -1,41 +1,25 @@
 /*
-    Project name : Metal Touch Sensor
-    Modified Date: 09-06-2024
+    Project name : Arduino Uno Metal Touch Sensor Module
+    Modified Date: 29-06-2024
     Code by : Projectslearner
     Website : https://projectslearner.com/learn/arduino-uno-metal-touch-sensor-module
 */
 
-int digitalPin = 6;   // KY-036 digital interface
-int analogPin = A1;   // KY-036 analog interface
-int ledPin = 12;      // Arduino LED pin
-int digitalVal;       // digital readings
-int analogVal;        // analog readings
+// Pin connected to the metal touch sensor module's output
+const int sensorPin = 2;
 
-void setup() 
-{
-  pinMode(digitalPin, INPUT); 
-  pinMode(analogPin, INPUT);
-  pinMode(ledPin, OUTPUT);      
-  Serial.begin(9600);
+void setup() {
+  Serial.begin(9600);  // Initialize serial communication
 }
 
-void loop()
-{
-  // Read the digital interface
-  digitalVal = digitalRead(digitalPin); 
-  
-  if(digitalVal == HIGH) {
-    digitalWrite(ledPin, HIGH); // Turn ON Arduino's LED
-    Serial.println("Digital Value: HIGH");
+void loop() {
+  int sensorValue = digitalRead(sensorPin);  // Read sensor state
+
+  if (sensorValue == HIGH) {
+    Serial.println("Metal touch detected");
   } else {
-    digitalWrite(ledPin, LOW);  // Turn OFF Arduino's LED
-    Serial.println("Digital Value: LOW");
+    Serial.println("No metal touch detected");
   }
 
-  // Read analog interface
-  analogVal = analogRead(analogPin);
-  Serial.print("Analog Value: ");
-  Serial.println(analogVal);  // Print analog value to serial
-
-  delay(100);
+  delay(500);  // Delay for readability
 }
